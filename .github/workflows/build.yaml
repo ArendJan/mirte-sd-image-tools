@@ -47,7 +47,7 @@ jobs:
               run: |
                     ./packerBuild.sh ${{ matrix.image }}
             - name: artifacts
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v4
               with:
                 path: build/*.img.xz
                 name: ${{ matrix.image }}
