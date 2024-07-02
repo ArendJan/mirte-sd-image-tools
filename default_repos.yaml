@@ -9,8 +9,8 @@ repositories:
     version: master
   mirte-install-scripts:
     type: git
-    url: https://github.com/mirte-robot/mirte-install-scripts.git
-    version: main
+    url: https://github.com/arendjan/mirte-install-scripts.git
+    version: fix-cmake-err
   mirte-telemetrix-aio:
     type: git
     url: https://github.com/mirte-robot/telemetrix-aio.git
