@@ -34,7 +34,9 @@ chown -R mirte /usr/local/src/mirte/*
 if [[ $type == "mirte_orangepizero" ]]; then
 	pip3 install /usr/local/src/mirte/wheels/*
 fi
-
+if [[ $type == "mirte_rpi4b" ]]; then
+	pip3 install /usr/local/src/mirte/wheels/*
+fi
 # install mirte
 sudo -i -u mirte bash -c 'export MAKEFLAGS=\"-j$(nproc)\"; cd /usr/local/src/mirte/mirte-install-scripts/ && ./install_mirte.sh'
 sed -i '$ d' /etc/sudoers
