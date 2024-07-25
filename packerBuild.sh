@@ -6,6 +6,10 @@ only_flags=""
 if (($# > 0)); then
 	only_flags="--only virtualbox-iso.$1"
 fi
+sudo apt install virtualbox virtualbox-ext-pack -y
+
+
+
 
 mkdir git_local || true
 mkdir workdir || true
