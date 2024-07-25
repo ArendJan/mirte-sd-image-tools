@@ -6,6 +6,8 @@ only_flags=""
 if (($# > 0)); then
 	only_flags="--only virtualbox-iso.$1"
 fi
+echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
+
 sudo apt install virtualbox virtualbox-ext-pack -y
 
 mkdir git_local || true
