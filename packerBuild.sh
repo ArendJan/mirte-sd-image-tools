@@ -4,7 +4,7 @@ set -o pipefail
 
 only_flags=""
 if (($# > 0)); then
-	only_flags="--only arm-image.$1"
+	only_flags="--only virtualbox-iso.$1"
 fi
 
 mkdir git_local || true
