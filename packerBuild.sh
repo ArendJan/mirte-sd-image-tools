@@ -4,14 +4,8 @@ set -o pipefail
 
 only_flags=""
 if (($# > 0)); then
-	only_flags="--only virtualbox-iso.$1"
+	only_flags="--only arm-image.$1"
 fi
-echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
-wget https://dl.armbian.com/uefi-arm64/archive/Armbian_24.5.1_Uefi-arm64_jammy_current_6.6.31.img.xz
-unxz Armbian_24.5.1_Uefi-arm64_jammy_current_6.6.31.img.xz
-mv Armbian_24.5.1_Uefi-arm64_jammy_current_6.6.31.img /tmp/armbianx64.iso
-sudo apt install virtualbox=6.1.6-dfsg-1 virtualbox-ext-pack -y
-
 mkdir git_local || true
 mkdir workdir || true
 mkdir logs || true

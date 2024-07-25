@@ -4,10 +4,7 @@ packer {
       version = ">= 0.2.11"
       source  = "github.com/arendjan/arm-image"
     }
-    virtualbox = {
-      version = ">=1.1.0"
-      source  = "github.com/hashicorp/virtualbox"
-    }
+    
 
   }
 }
@@ -21,19 +18,19 @@ source "arm-image" "mirte_orangepizero2" {
   qemu_binary = "qemu-aarch64-static"
 }
 
-source "virtualbox-iso" "mirte_x64" {
-  guest_os_type = "Ubuntu_64"
-  # iso_url = "http://releases.ubuntu.com/12.04/ubuntu-12.04.5-server-amd64.iso"
-  # iso_checksum = "md5: q"
-  ssh_username = "packer"
-  ssh_password = "packer"
-  shutdown_command = "echo 'packer' | sudo -S shutdown -P now"
-  iso_url = "file:///tmp/armbianx64.iso"
-  iso_checksum = "none"
-  # output_filename = "./workdir/mirte_x64.img"
-  # target_image_size = 15*1024*1024*1024
-  # qemu_binary = "qemu-aarch64-static"
-}
+# source "virtualbox-iso" "mirte_x64" {
+#   guest_os_type = "Ubuntu_64"
+#   # iso_url = "http://releases.ubuntu.com/12.04/ubuntu-12.04.5-server-amd64.iso"
+#   # iso_checksum = "md5: q"
+#   ssh_username = "packer"
+#   ssh_password = "packer"
+#   shutdown_command = "echo 'packer' | sudo -S shutdown -P now"
+#   iso_url = "file:///tmp/armbianx64.iso"
+#   iso_checksum = "none"
+#   # output_filename = "./workdir/mirte_x64.img"
+#   # target_image_size = 15*1024*1024*1024
+#   # qemu_binary = "qemu-aarch64-static"
+# }
 
 source "arm-image" "mirte_orangepizero" {
   image_type = "armbian"
@@ -61,7 +58,7 @@ source "arm-image" "mirte_rpi4b" { # TODO: change to armbian image
 
 
 build {
-  sources = ["source.arm-image.mirte_orangepizero2", "source.arm-image.mirte_orangepizero",  "source.arm-image.mirte_orangepi3b", "source.arm-image.mirte_rpi4b", "source.virtualbox-iso.mirte_x64"]
+  sources = ["source.arm-image.mirte_orangepizero2", "source.arm-image.mirte_orangepizero",  "source.arm-image.mirte_orangepi3b", "source.arm-image.mirte_rpi4b"]
   provisioner "file" {
     source = "git_local"
     destination = "/usr/local/src/mirte"

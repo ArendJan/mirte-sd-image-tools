@@ -21,8 +21,8 @@ jobs:
                 image: [
                         # mirte_orangepizero, 
                         # mirte_orangepizero2,
-                        # mirte_orangepi3b,
-                        mirte_x64
+                        mirte_orangepi3b,
+                        
                         ]
             fail-fast: false
         steps:
