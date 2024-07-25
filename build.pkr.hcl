@@ -4,6 +4,11 @@ packer {
       version = ">= 0.2.11"
       source  = "github.com/arendjan/arm-image"
     }
+    virtualbox = {
+      version = "~> 1"
+      source  = "github.com/hashicorp/virtualbox"
+    }
+
   }
 }
 
@@ -16,12 +21,17 @@ source "arm-image" "mirte_orangepizero2" {
   qemu_binary = "qemu-aarch64-static"
 }
 
-source "arm-image" "mirte_x64" {
-    image_type = "armbian"
+source "virtualbox-iso" "mirte_x64" {
+  guest_os_type = "Ubuntu_64"
+  # iso_url = "http://releases.ubuntu.com/12.04/ubuntu-12.04.5-server-amd64.iso"
+  # iso_checksum = "md5: q"
+  ssh_username = "packer"
+  ssh_password = "packer"
+  shutdown_command = "echo 'packer' | sudo -S shutdown -P now"
   iso_url = "https://dl.armbian.com/uefi-arm64/archive/Armbian_24.5.1_Uefi-arm64_jammy_current_6.6.31.img.xz"
   iso_checksum = "none"
-  output_filename = "./workdir/mirte_x64.img"
-  target_image_size = 15*1024*1024*1024
+  # output_filename = "./workdir/mirte_x64.img"
+  # target_image_size = 15*1024*1024*1024
   # qemu_binary = "qemu-aarch64-static"
 }
 
