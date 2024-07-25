@@ -8,9 +8,6 @@ if (($# > 0)); then
 fi
 sudo apt install virtualbox virtualbox-ext-pack -y
 
-
-
-
 mkdir git_local || true
 mkdir workdir || true
 mkdir logs || true
