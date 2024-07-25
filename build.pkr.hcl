@@ -16,6 +16,15 @@ source "arm-image" "mirte_orangepizero2" {
   qemu_binary = "qemu-aarch64-static"
 }
 
+source "arm-image" "mirte_x64" {
+    image_type = "armbian"
+  iso_url = "https://dl.armbian.com/uefi-arm64/archive/Armbian_24.5.1_Uefi-arm64_jammy_current_6.6.31.img.xz"
+  iso_checksum = "none"
+  output_filename = "./workdir/mirte_x64.img"
+  target_image_size = 15*1024*1024*1024
+  # qemu_binary = "qemu-aarch64-static"
+}
+
 source "arm-image" "mirte_orangepizero" {
   image_type = "armbian"
   iso_url = "https://surfdrive.surf.nl/files/index.php/s/Zoep7yE9GlX3o7m/download?path=%2F&files=Armbian_21.02.3_Orangepizero_focal_current_5.10.21.img.xz"

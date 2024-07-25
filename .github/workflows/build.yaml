@@ -20,8 +20,9 @@ jobs:
             matrix:
                 image: [
                         # mirte_orangepizero, 
-                        mirte_orangepizero2,
-                        mirte_orangepi3b
+                        # mirte_orangepizero2,
+                        # mirte_orangepi3b,
+                        mirte_x64
                         ]
             fail-fast: false
         steps:

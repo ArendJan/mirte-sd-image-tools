@@ -1,0 +1,25 @@
+---
+name: test
+on: [push]
+jobs:
+  upload_huge_file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+            # create huge file
+      - run: dd if=/dev/random of=huge_file bs=1M count=1024
+      - name: Upload huge file
+        uses: actions/upload-artifact@v4
+        with:
+          name: huge_file
+          path: huge_file
+  download_huge_file:
+    runs-on: ubuntu-latest
+    needs: upload_huge_file
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download huge file
+        uses: actions/download-artifact@v4
+        with:
+          name: huge_file
+      - run: ls -al
