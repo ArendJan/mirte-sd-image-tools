@@ -28,7 +28,7 @@ source "virtualbox-iso" "mirte_x64" {
   ssh_username = "packer"
   ssh_password = "packer"
   shutdown_command = "echo 'packer' | sudo -S shutdown -P now"
-  iso_url = "https://dl.armbian.com/uefi-arm64/archive/Armbian_24.5.1_Uefi-arm64_jammy_current_6.6.31.img.xz"
+  iso_url = "file:///tmp/armbianx64.iso"
   iso_checksum = "none"
   # output_filename = "./workdir/mirte_x64.img"
   # target_image_size = 15*1024*1024*1024

@@ -7,7 +7,9 @@ if (($# > 0)); then
 	only_flags="--only virtualbox-iso.$1"
 fi
 echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
-
+wget https://dl.armbian.com/uefi-arm64/archive/Armbian_24.5.1_Uefi-arm64_jammy_current_6.6.31.img.xz
+unzip Armbian_24.5.1_Uefi-arm64_jammy_current_6.6.31.img.xz
+mv Armbian_24.5.1_Uefi-arm64_jammy_current_6.6.31.img /tmp/armbianx64.iso
 sudo apt install virtualbox virtualbox-ext-pack -y
 
 mkdir git_local || true
