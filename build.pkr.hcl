@@ -51,7 +51,7 @@ source "arm-image" "mirte_rpi4b" { # TODO: change to armbian image
 
 
 build {
-  sources = ["source.arm-image.mirte_orangepizero2", "source.arm-image.mirte_orangepizero",  "source.arm-image.mirte_orangepi3b", "source.arm-image.mirte_rpi4b"]
+  sources = ["source.arm-image.mirte_orangepizero2", "source.arm-image.mirte_orangepizero",  "source.arm-image.mirte_orangepi3b", "source.arm-image.mirte_rpi4b", "source.arm-image.mirte_x64"]
   provisioner "file" {
     source = "git_local"
     destination = "/usr/local/src/mirte"
