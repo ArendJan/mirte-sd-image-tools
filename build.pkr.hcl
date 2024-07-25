@@ -5,7 +5,7 @@ packer {
       source  = "github.com/arendjan/arm-image"
     }
     virtualbox = {
-      version = "~> 1"
+      version = ">=1.1.0"
       source  = "github.com/hashicorp/virtualbox"
     }
 
