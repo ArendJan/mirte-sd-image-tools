@@ -15,7 +15,7 @@ jobs:
         strategy:
             matrix:
                 image: [ 
-                        mirte_orangepizero2,
+                        mirte_orangepizero2_ros2, # ubu 24, ros2 jazzy
                         mirte_orangepi3b
                         ]
             fail-fast: false
