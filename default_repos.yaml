@@ -2,7 +2,7 @@ repositories:
   mirte-web-interface:
     type: git
     url: https://github.com/mirte-robot/mirte-web-interface.git
-    version: v0.1.1
+    tag: v0.1.1
   mirte-telemetrix4arduino:
     type: git
     url: https://github.com/mirte-robot/Telemetrix4Arduino.git
@@ -34,7 +34,7 @@ repositories:
   mirte-python:
     type: git
     url: https://github.com/mirte-robot/mirte-python.git
-    version: v0.1.1-dev
+    tag: v0.1.1
   mirte-documentation:
     type: git
     url: https://github.com/mirte-robot/mirte-documentation.git
