@@ -10,17 +10,19 @@ jobs:
       uses: ./.github/workflows/shellcheck.yml
     shfmt:
       uses: ./.github/workflows/shfmt.yml
+    reposcheck:
+      uses: ./.github/workflows/repocheck.yml
     build-and-push:
         # container:
         #   image: ubuntu:22.04
         #   options: --privileged
         runs-on: ubuntu-latest
-        needs: [shellcheck, shfmt]
+        needs: [shellcheck, shfmt, reposcheck]
         strategy:
             matrix:
                 image: [
-                        mirte_orangepizero, 
-                        # mirte_orangepizero2,
+                        # mirte_orangepizero, 
+                        mirte_orangepizero2,
                         # mirte_orangepi3b,
                         # mirte_rpi4b
                         ]
