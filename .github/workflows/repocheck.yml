@@ -19,4 +19,4 @@ jobs:
           sudo apt-get install python3-vcstool -y
           mkdir check
       - name: check
-        run: vcstool --input default_repos.yaml check
+        run: vcs import --input default_repos.yaml check
