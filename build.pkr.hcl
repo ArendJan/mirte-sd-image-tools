@@ -9,8 +9,8 @@ packer {
 
 source "arm-image" "mirte_orangepizero2" {
   image_type = "armbian"
-  iso_url = "https://mirte.arend-jan.com/files/test/Armbian-unofficial_24.11.0-trunk_Orangepizero2_focal_edge_6.11.2.img.xz"
-  iso_checksum = "sha256:a30c27cabc7185dc3c622e5a13405f7f9f8e88a55978d8ff46b6923acfb21b16"
+  iso_url = "https://mirte.arend-jan.com/files/test/Armbian-unofficial_24.11.0-trunk_Orangepizero2_focal_current_6.6.54.img.xz"
+  iso_checksum = "sha256:47adbd257d5aa9600d2599b9a456059a89c87e1ffed7838592d08aff5b3d92ad"
   output_filename = "./workdir/mirte_orangepizero2.img"
   target_image_size = 15*1024*1024*1024
   qemu_binary = "qemu-aarch64-static"
