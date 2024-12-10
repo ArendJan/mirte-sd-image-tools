@@ -32,7 +32,6 @@ else
 	add_partition
 fi
 
-
 $parent_path/../pishrink.sh "$image_file"
 
 echo "done"
