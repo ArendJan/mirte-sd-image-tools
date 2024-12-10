@@ -52,5 +52,6 @@ echo 'overlayroot=device:dev=LABEL=mirte_root,timeout=2' | sudo tee -a /etc/over
 # if $INSTALL_PROVISIONING; then
 #     mkdir /mnt/mirte # create mount point and automount it
 #     echo 'UUID="9EE2-A262" /mnt/mirte/ vfat rw,relatime,uid=1000,gid=1000,errors=remount-ro 0 0' >>/etc/fstab;
-#     systemctl disable armbian-resize-filesystem
+systemctl disable armbian-resize-filesystem # otherwise the second partition will be removed
+# pishrink already expands the filesystem
 # fi
