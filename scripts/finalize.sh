@@ -4,6 +4,7 @@ imagefile=$1
 if $INSTALL_PROVISIONING; then
 	sudo ./add_partition_local/add_partition.sh $imagefile
 fi
+sudo ./pishrink.sh $imagefile || true # shrink before overlay
 sudo ./add_partition_local/add_overlay_partition.sh $imagefile
 sudo ./pishrink.sh $imagefile || true
 filename=$(basename $imagefile .img)
