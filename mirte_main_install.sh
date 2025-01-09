@@ -33,7 +33,7 @@ chown -R mirte /usr/local/src/mirte/*
 
 # install prebuilt wheels when on orangepizero, as numpy takes ages to build
 if [[ $type == "mirte_orangepizero" ]]; then
-	pip3 install /usr/local/src/mirte/wheels/*
+	pip3 install /usr/local/src/mirte/wheels/* || true
 fi
 
 # install mirte
