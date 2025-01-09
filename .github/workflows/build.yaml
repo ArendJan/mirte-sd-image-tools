@@ -18,7 +18,7 @@ jobs:
         #   options: --privileged
         # if commit starts with x, dont start this job
         if:  ${{ ! startsWith(github.event.head_commit.message, 'x') }}
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-22.04
         needs: [shellcheck, shfmt, reposcheck]
         strategy:
             matrix:
