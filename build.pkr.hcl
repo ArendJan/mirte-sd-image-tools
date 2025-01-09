@@ -18,8 +18,8 @@ source "arm-image" "mirte_orangepizero2" {
 
 source "arm-image" "mirte_orangepizero" {
   image_type = "armbian"
-  iso_url = "https://mirte.arend-jan.com/files/base_img/Armbian-unofficial_25.02.0-trunk_Orangepizero_jammy_edge_6.12.6%20(2).img.xz"
-  iso_checksum = "sha256:be4c00697d067f691f400aec2235e5c306915f080571b5462c2e4bfb00fed709"
+  iso_url = "https://mirte.arend-jan.com/files/base_img/Armbian-unofficial_25.02.0-trunk_Orangepizero_focal_edge_6.12.6.img.xz"
+  iso_checksum = "sha256:39d7c3c06cbccbb1662b9bdaeec0ef32caad556c6dfa980f7305196a4ed66b98"
   output_filename = "./workdir/mirte_orangepizero.img"
   target_image_size = 15*1024*1024*1024
 }
