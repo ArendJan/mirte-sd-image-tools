@@ -44,18 +44,18 @@ jobs:
         runs-on: ubuntu-22.04-arm
         
         steps:
-            - name: Maximize build space
-              uses: AdityaGarg8/remove-unwanted-software@v4
-              if: ${{ !env.ACT }}
-              with:
-                remove-android: 'true'
-                remove-dotnet: 'true'
-                remove-haskell: 'true'
-                remove-docker-images: 'true'
-                remove-large-packages: 'true'
-                remove-cached-tools: 'true'
-                remove-codeql: 'true'
-                remove-swapfile: 'true'
+            # - name: Maximize build space
+            #   uses: AdityaGarg8/remove-unwanted-software@v4
+            #   if: ${{ !env.ACT }}
+            #   with:
+            #     remove-android: 'true'
+            #     remove-dotnet: 'true'
+            #     remove-haskell: 'true'
+            #     remove-docker-images: 'true'
+            #     remove-large-packages: 'true'
+            #     remove-cached-tools: 'true'
+            #     remove-codeql: 'true'
+            #     remove-swapfile: 'true'
             - name: Checkout repository
               uses: actions/checkout@v4
             - name: Extract branch name
