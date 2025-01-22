@@ -41,7 +41,7 @@ jobs:
         # container:
         #   image: ubuntu:22.04
         #   options: --privileged
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-22.04-arm
         
         steps:
             - name: Maximize build space
