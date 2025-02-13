@@ -18,7 +18,7 @@ run ./shell.sh \<img file> and you will get a shell after some time. You can cre
 ```sh
 sudo apt remove qemu-user-static -y && sudo apt install qemu-user-static
 ```
-
+ 
 # VCS issues:
 When you get 
 ```
