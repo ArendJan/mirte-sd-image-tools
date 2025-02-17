@@ -45,7 +45,7 @@ jobs:
         
         steps:
             - name: Maximize build space
-              uses: AdityaGarg8/remove-unwanted-software@v4
+              uses: AdityaGarg8/remove-unwanted-software@v5
               if: ${{ !env.ACT && runner.arch != 'ARM' && runner.arch != 'ARM64' }}
               with:
                 remove-android: 'true'

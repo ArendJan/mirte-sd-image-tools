@@ -33,7 +33,7 @@ jobs:
       needs: [shellcheck, shfmt ]
       steps:
             - name: Maximize build space
-              uses: AdityaGarg8/remove-unwanted-software@v3
+              uses: AdityaGarg8/remove-unwanted-software@v5
               # run not in act and not if runs-on is not ubuntu-22.04-arm
               if: ${{ !env.ACT && runner.arch != 'ARM' && runner.arch != 'ARM64' }}
               with:
