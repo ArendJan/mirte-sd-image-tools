@@ -10,8 +10,8 @@ packer {
 
 source "arm-image" "mirte_orangepizero2" {
   image_type = "armbian"
-  iso_url = "https://github.com/ArendJan/mirte_base_images/releases/download/25.2.3/Armbian-unofficial_25.2.3_Orangepizero2_jammy_current_6.6.62.img.xz"
-  iso_checksum = "file:https://github.com/ArendJan/mirte_base_images/releases/download/25.2.3/Armbian-unofficial_25.2.3_Orangepizero2_jammy_current_6.6.62.img.xz.sha"
+  iso_url = "https://github.com/ArendJan/mirte_base_images/releases/download/25.5.1/Armbian-unofficial_25.5.1_Orangepizero2_jammy_edge_6.12.9.img.xz"
+  iso_checksum = "file:https://github.com/ArendJan/mirte_base_images/releases/download/25.5.1/Armbian-unofficial_25.5.1_Orangepizero2_jammy_edge_6.12.9.img.xz.sha"
   output_filename = "./workdir/mirte_orangepizero2.img"
   target_image_size = 15*1024*1024*1024
   image_arch = "arm64"
