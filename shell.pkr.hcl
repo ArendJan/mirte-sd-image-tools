@@ -30,7 +30,7 @@ source "arm-image" "image" {
   iso_url = "${var.image_url}"
   iso_checksum = "none"
   qemu_binary = "qemu-aarch64-static"
-  # image_mounts = ["/", "/mnt/mirte/"]
+  image_mounts = ["/", "/mnt/mirte/"]
   output_filename = "./shell_workdir/${var.image_name}.img"
   target_image_size = 15*1024*1024*1024
 
