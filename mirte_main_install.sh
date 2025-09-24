@@ -27,7 +27,7 @@ pip3 install vcstool
 apt install -y python3-pip python3-dev libblas-dev liblapack-dev libatlas-base-dev gfortran
 cd /usr/local/src/mirte/
 # Download all the mirte repos
-vcs import --workers 1 --input ./repos.yaml --skip-existing || true
+vcs import --workers 1 --input ./repos.yaml --skip-existing --shallow || true
 # Initialize the submodule of mirte-telemetrix-cpp
 if [ -d ./mirte-telemetrix-cpp ]; then
 	cd mirte-telemetrix-cpp
