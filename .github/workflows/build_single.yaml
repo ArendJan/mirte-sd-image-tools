@@ -31,11 +31,11 @@ on:
         sbc:
             required: false
             type: choice
-            default: orangepizero2
+            default: mirte_orangepizero2
             options:
-              - orangepizero2
-              - orangepi3b
-              - rpi4b
+              - mirte_orangepizero2
+              - mirte_orangepi3b
+              - mirte_rpi4b
 
 permissions:
     contents: write
