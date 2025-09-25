@@ -36,7 +36,10 @@ on:
               - mirte_orangepizero2
               - mirte_orangepi3b
               - mirte_rpi4b
-
+        branch:
+            required: false
+            type: string
+            default: "develop"
 permissions:
     contents: write
   
