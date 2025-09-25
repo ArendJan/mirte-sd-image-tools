@@ -69,4 +69,4 @@ if $ADD_OVERLAY_PARTITION; then
 	systemctl disable armbian-resize-filesystem # this will be done better by our script
 fi
 
-sudo apt autoremove && sudo apt clean
+sudo apt autoremove && sudo apt clean && sudo rm -rf /var/lib/apt/lists/*
