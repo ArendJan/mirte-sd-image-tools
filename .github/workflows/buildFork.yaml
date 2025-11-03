@@ -6,8 +6,8 @@ on:
       branch:
         required: false
         type: string
-        default: develop
-  push:
+        default: main
+
 permissions:
     contents: write
     actions: write
