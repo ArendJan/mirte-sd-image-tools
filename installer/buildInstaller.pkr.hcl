@@ -7,10 +7,10 @@ packer {
   }
 }
 
-variable "image_url" {
-  type = string
-  default = "build/mirte_orangepi3b.img.xz"
-}
+# variable "image_url" {
+#   type = string
+#   default = "build/mirte_orangepi3b.img.xz"
+# }
 # source "arm-image" "mirte_orangepizero2" {
 #   image_type = "armbian"
 #   iso_url = "https://surfdrive.surf.nl/files/index.php/s/Zoep7yE9GlX3o7m/download?path=%2F&files=Armbian_22.02.2_Orangepizero2_focal_legacy_4.9.255.img.xz"
@@ -48,21 +48,9 @@ source "arm-image" "mirte_orangepi3b" {
 build {
   sources = ["source.arm-image.mirte_orangepi3b"]
   provisioner "file" {
-    source = "installer/"
+    source = "installer_files/"
     destination = "/root/"
   }
-#  provisioner "file" {
-#     source = "build/mirte_orangepi3b_2024-02-01_21_00_25.img"
-#     destination = "/root/mirte_orangepi3b.img"
-#  }
-provisioner "file" {
-    source = "${var.image_url}"
-    destination = "/root/mirte_orangepi3b.img.xz"
- }
- provisioner "file" {
-    source = "installer/install.sh"
-    destination = "/root/install.sh"
- }
  provisioner "shell" {
     inline_shebang = "/bin/bash -e"
     inline = [
