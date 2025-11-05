@@ -9,7 +9,7 @@ packer {
 
 # source "arm-image" "mirte_orangepizero2" {
 #   image_type = "armbian"
-#   iso_url = "https://surfdrive.surf.nl/files/index.php/s/Zoep7yE9GlX3o7m/download?path=%2F&files=Armbian_22.02.2_Orangepizero2_focal_legacy_4.9.255.img.xz"
+#   iso_url = "https://surfdrive.surf.nl/public.php/dav/files/Zoep7yE9GlX3o7m/Armbian_22.02.2_Orangepizero2_focal_legacy_4.9.255.img.xz/"
 #   iso_checksum = "sha256:d2a6e59cfdb4a59fbc6f8d8b30d4fb8c4be89370e9644d46b22391ea8dff701d"
 #   output_filename = "./workdir/mirte_orangepizero2.img"
 #   target_image_size = 15*1024*1024*1024
@@ -18,7 +18,7 @@ packer {
 
 # source "arm-image" "mirte_orangepizero" {
 #   image_type = "armbian"
-#   iso_url = "https://surfdrive.surf.nl/files/index.php/s/Zoep7yE9GlX3o7m/download?path=%2F&files=Armbian_21.02.3_Orangepizero_focal_current_5.10.21.img.xz"
+#   iso_url = "https://surfdrive.surf.nl/public.php/dav/files/Zoep7yE9GlX3o7m/Armbian_21.02.3_Orangepizero_focal_current_5.10.21.img.xz/"
 #   iso_checksum = "sha256:44ceec125779d67c1786b31f9338d9edf5b4f64324cc7be6cfa4a084c838a6ca"
 #   output_filename = "./workdir/mirte_orangepizero.img"
 #   target_image_size = 15*1024*1024*1024
