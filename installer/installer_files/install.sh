@@ -11,7 +11,7 @@ echo "nameserver 8.8.8.8" >/etc/resolv.conf || true
 chmod +x /root/mirte-install.sh
 cp /root/mirte-install.service /etc/systemd/system/
 systemctl enable mirte-install.service
-md5sum </root/mirte_orangepi3b.img >/root/mirte_orangepi3b.img.md5sum
+# md5sum </root/mirte_orangepi3b.img >/root/mirte_orangepi3b.img.md5sum
 apt update
 apt install progress cmake python3 python3-pip -y
 wget https://mirte.arend-jan.com/files/fixes/uboot/linux-u-boot-orangepi3b-edge_24.2.1_arm64__2023.10-S095b-P0000-H264e-V49ed-B11a8-R448a.deb
@@ -48,3 +48,5 @@ cd /root/ || exit 1
 wget https://mirte.arend-jan.com/files/telemetrix/release/Telemetrix4RpiPico.uf2
 
 pip install git+https://github.com/arendjan/tmx-pico-aio.git@modules
+
+pip install yq # for parsing yaml files in mirte-install.sh

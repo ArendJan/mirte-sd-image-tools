@@ -108,14 +108,14 @@ jobs:
     #     name: 'image'
     #   secrets: inherit
 
-    build_installer_all:
-      # TODO: Add a flag for building installers, based on some configuration
-      if: ${{ endsWith(inputs.sbc, 'orangepi3b') }}
-      needs: [build-and-push]
-      uses: ./.github/workflows/build_installer.yaml
-      with:
-        # download_artifacts: true
-        mirte_type: ${{ inputs.mirte_type }}
-        sbc: ${{ inputs.sbc }}
-      secrets: inherit
+    # build_installer_all:
+    #   # TODO: Add a flag for building installers, based on some configuration
+    #   if: ${{ endsWith(inputs.sbc, 'orangepi3b') }}
+    #   needs: [build-and-push]
+    #   uses: ./.github/workflows/build_installer.yaml
+    #   with:
+    #     # download_artifacts: true
+    #     mirte_type: ${{ inputs.mirte_type }}
+    #     sbc: ${{ inputs.sbc }}
+    #   secrets: inherit
               
