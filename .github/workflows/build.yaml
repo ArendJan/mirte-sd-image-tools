@@ -61,7 +61,7 @@ jobs:
               run: |
                     ./packerBuild.sh ${{ matrix.image }}
             - name: artifacts
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v6
               with:
                 path: build/*.img.xz
                 name: ${{ matrix.image }}-${{ matrix.type }}-${{ steps.extract_branch.outputs.branch }}
