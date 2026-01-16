@@ -1,0 +1,87 @@
+name: Build custom Mirte image
+
+on:
+    workflow_dispatch:
+       inputs:
+          base_image_url:
+            description: 'Base image URL'
+            required: true
+            default: 'https://github.com/ArendJan/mirte_base_images/releases/download/25.11.3/Armbian-unofficial_25.11.3_Orangepi5_jammy_current_6.12.58.img.xz'
+          base_image_checksum:
+            description: 'Base image checksum (sha256: or file:https:// or none)'
+            required: true
+            default: 'none'
+          base_image_name:
+            description: 'Base image name'
+            required: true
+            default: 'mirte_custom_image'
+permissions:
+    contents: write
+    actions: write
+    repository-projects: write
+    pull-requests: write
+  
+jobs:
+    shellcheck:
+      uses: ./.github/workflows/shellcheck.yml
+    shfmt:
+      uses: ./.github/workflows/shfmt.yml
+    repocheck:
+      uses: ./.github/workflows/repocheck.yml
+    build-and-push:
+        needs: [shellcheck, shfmt, repocheck]
+        runs-on: ubuntu-22.04
+
+        steps:
+        - name: Maximize build space
+          uses: AdityaGarg8/remove-unwanted-software@v5
+          if: ${{ !env.ACT && runner.arch != 'ARM' && runner.arch != 'ARM64' }}
+          with:
+            remove-android: 'true'
+            remove-dotnet: 'true'
+            remove-haskell: 'true'
+            remove-docker-images: 'true'
+            remove-large-packages: 'true'
+            remove-cached-tools: 'true'
+            remove-codeql: 'true'
+            remove-swapfile: 'true'
+        - name: Checkout repository
+          uses: actions/checkout@v4
+        - name: Extract branch name
+          shell: bash
+          run: |
+            echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+            echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> $GITHUB_OUTPUT
+            echo "artifact_name=${{ inputs.base_image_name }}" >> $GITHUB_OUTPUT
+            echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+          id: extract_branch
+        - name: Set up QEMU
+          uses: docker/setup-qemu-action@v3
+        - name: setup this repo
+          run: |
+                echo $PACKER_GITHUB_API_TOKEN
+                sudo apt update
+                sudo apt install qemu-user-static parted -y
+                ./packerInstall.sh
+          env:
+            PACKER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: setup build files
+          run: |
+              echo -e "MIRTE_TYPE=master" >> settings.sh
+              cat settings.sh
+              # - name: setup repos
+        - name: Build
+          run: |
+                echo $PACKER_GITHUB_API_TOKEN
+
+                ./packerBuild_special.sh ${{ inputs.base_image_url }} ${{ inputs.base_image_checksum }} ${{ inputs.base_image_name }}
+          env:
+            PACKER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        - name: artifacts
+          uses: actions/upload-artifact@v4
+          if: always()
+          with:
+            path: build/*.img.xz
+            name: mirte_master_${{ inputs.base_image_name }}
