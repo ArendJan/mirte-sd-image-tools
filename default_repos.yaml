@@ -22,7 +22,7 @@ repositories:
   mirte-ros-packages:
     type: git
     url: https://github.com/mirte-robot/mirte-ros-packages.git
-    version: main
+    version: 5a1ad50
   mirte-oled-images:
     type: git
     url: https://github.com/mirte-robot/mirte-oled-images.git
