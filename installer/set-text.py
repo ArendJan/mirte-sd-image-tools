@@ -11,8 +11,8 @@ from tmx_pico_aio import tmx_pico_aio
 
 async def ssd1306(my_board):
     i2c_port = 1
-    scl = 2
-    sda = 3
+    scl = 3
+    sda = 2
     await my_board.set_pin_mode_i2c(i2c_port, sda, scl)
     await asyncio.sleep(0.1)
     funcs = await my_board.modules.add_tmx_ssd1306(i2c_port)
